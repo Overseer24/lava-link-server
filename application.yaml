@@ -1,5 +1,5 @@
 server: # REST and WS server
-  port: 2333
+  port: ${PORT}
   address: 0.0.0.0
   http2:
     enabled: false # Whether to enable HTTP/2 support
@@ -27,11 +27,11 @@ plugins:
       youtube: true
     spotify:
       albumLoadLimit: 6
-      clientId: 9a43b5e29b244008887c740664db7d9f
-      clientSecret: 13b71365cdbb4a8c9b9d7488a43e31ee
+      clientId: ${SPOTIFY_CLIENT_ID}
+      clientSecret: ${SPOTIFY_CLIENT_SECRET}
       countryCode: PH
       playlistLoadLimit: 6
-      spDc: "AQDQeZZgCCb1A_qs1Io9zrF2-gxiz6u6RPltSKsHOrCwNMG6PbAYggAF3uGpIe3kPK-Ywj-J7n7CQdHtQZN57TTUuOv9dh1HDyjeppJe1gX6XpbExSPaMR4UJXYl5EXjDy8B2f5wpDNTMsEaSR7_LO-fCEqfnr3z0Vcdi8qaRLf2fRqqp_ggH9_0EuHqmi2bpdpPneWxbf6f36mZDw_2S55PaWKjRM49YItVbEGX-ejaeD-dS8297jmiwaIOUwRapq6GYypK4ZsrWw"
+      spDc: ${SPOTIFY_SPDC}
   youtube:
     allowDirectPlaylistIds: true
     allowDirectVideoIds: true
@@ -54,7 +54,7 @@ plugins:
     enabled: true
     oauth:
       enabled: true
-      refreshToken: 1//0ep8m_2JYdtpeCgYIARAAGA4SNwF-L9IrWCEPsLsCPhGQcCva98wKZA0fBfKdis-i9H6Ha9ixPWKSS4iqplZtAcYmG-gnmS7ebN0
+      refreshToken: ${GOOGLE_OAUTH_REFRESH_TOKEN}
       skipInitialization: false
 lavalink:
   plugins:
@@ -65,7 +65,7 @@ lavalink:
     - dependency: "com.github.topi314.lavalyrics:lavalyrics-plugin:1.0.0"
       snapshot: false
   server:
-    password: "youshallnotpass"
+    password: ${LAVALINK_PASSWORD}
     sources:
       # The default Youtube source is now deprecated and won't receive further updates. Please use https://github.com/lavalink-devs/youtube-source#plugin instead.
       youtube: false
